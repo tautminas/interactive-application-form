@@ -1,0 +1,173 @@
+/* Variables */
+:root {
+  --color-orange: #ee7023;
+  --color-apricot: #fbf2ea;
+  --color-turquoise: #31a3ae;
+  --color-input: #f1faf6;
+  --color-input-border: #bcd8db;
+  --color-white: #fff;
+
+  --font-family-normal: Helvetica, Arial, sans-serif;
+  --common-border-radius: 3px;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-normal);
+  background-color: var(--color-apricot);
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Form */
+#registerForm {
+  background-color: var(--color-orange);
+  margin: 100px auto;
+  width: 70%;
+  padding: 40px;
+  min-width: 300px;
+  color: var(--color-input);
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  margin: 10px 0px;
+  border-color: var(--color-input-border);
+}
+
+/* Steps */
+.step {
+    display: none;
+}
+
+button {
+  background-color: var(--color-turquoise);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  float: right;
+  margin-left: 15px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Indicators */
+.indicators {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.indicator {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
+.indicator.finish {
+  background-color: #5de91e;
+}
+
+.indicator.unmarked {
+  opacity: 0;
+}
+
+/* Usage of border radius */
+#registerForm, #prevBtn, #nextBtn {
+  border-radius: var(--common-border-radius);
+}
+
+/* Radio and checkbox inputs */
+.gender{
+  display: grid;
+  grid-template-columns: 150px 20px;
+}
+
+.card{
+  display: grid;
+  grid-template-columns: 250px 20px;
+}
+
+.gender label, .card label {
+  display: flex;
+  align-items: center;
+}
+
+#male, #female, #unknown, #card1, #card2, #card3 {
+  width: auto;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Textarea */
+textarea {
+  height: 100%;
+  width: 100%;
+  resize: vertical;
+}
+
+/* Error messages */
+.error {
+  color: #8B0000;
+}

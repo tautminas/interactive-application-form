@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Stepper Feature</title>
+  <!--Master Styles-->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+ 
+  <!--Beginning of form-->
+  <form id="registerForm">
+      
+    <h1 id="mainH">Registration for credit card consultation</h1>
+
+    <div class="step">
+      <p>Welcome! Please fill this form of contact and credit card related questions after which our consultant will reach out to you for a free consultation. Keep in mind that all answers of the form are mandatory.</p>
+    </div>
+
+    <div class="step">
+        Contact information:
+        <input type="text" placeholder="First Name" name="fname" /> <div class = "error" id="err1"></div>
+        <input type="text" placeholder="Last Name" name="lname" /> <div class = "error" id="err2"></div>
+        <input type="text" placeholder="Phone Number" name="phone" /> <div class = "error" id="err3"></div>
+        <input type="email" placeholder="Email" name="email" /> <div class = "error" id="err4"></div>
+    </div>
+
+    <div class="step">
+        Gender:
+        <div class="gender">
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="Male">
+        </div>
+
+        <div class="gender">
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="Female">
+        </div>
+
+        <div class="gender">
+          <label for="unknown">Prefer not to say</label>
+          <input type="radio" id="unknown" name="gender" value="Unknown">
+        </div>
+
+        <div class = "error" id="err5"></div>
+    </div>
+
+    <div class="step">
+        Name of the credit card(-s) you are interested in:
+        <div class="card">
+          <label for="card1"> Revolving credit card </label>
+          <input type="checkbox" id="card1" name="card1" value="Revolving">
+        </div>
+
+        <div class="card">
+          <label for="card2"> Gold revolving credit card </label>
+          <input type="checkbox" id="card2" name="card2" value="Gold">
+        </div>
+
+        <div class="card">
+          <label for="card3"> Mastercard Platinum credit card </label>
+          <input type="checkbox" id="card3" name="card3" value="Mastercard">
+        </div>
+
+        <div class = "error" id="err6"></div>
+    </div>
+
+    <div class="step">
+      
+      <label for="limit">Desirable
+        <div class="tooltip">credit limit 
+          <span class="tooltiptext">Maximum amount of money you can spend</span>
+        </div>:
+      </label>
+      <select name="limit" id="limit">
+        <option hidden disabled selected value> Select an option </option>
+        <option value="limitUnknown">No preference</option>
+        <option value="limit300">From 300 EUR</option>
+        <option value="limit600">From 600 EUR</option>
+        <option value="limit2000">From 2000 EUR</option>
+      </select>
+      <div class = "error" id="err7"></div>
+    </div>
+
+    <div class="step">
+      <label for="additional">Additional information:</label><br>
+      <textarea id="additional" name="additional" placeholder="Any additional information you would like us to know."></textarea>
+      <div class = "error" id="err8"></div>
+    </div>
+
+    <div class="step">
+      <p id="outro"></p>
+    </div>
+
+    <!--Buttons-->
+    <div class="buttons">
+      <button type="button" id="nextBtn" onclick="move(1)">Next</button>
+      <button type="button" id="prevBtn" onclick="move(-1)">Previous</button>
+    </div>
+
+    <!--Indicators-->
+    <div class="indicators">
+      <span class="indicator unmarked"></span>
+      <span class="indicator"></span>
+      <span class="indicator"></span>
+      <span class="indicator"></span>
+      <span class="indicator"></span>
+      <span class="indicator"></span>
+      <span class="indicator unmarked"></span>
+    </div>
+
+  </form>
+  <!--End of form-->
+
+  <!--Stepper-->
+  <script src="./stepper.js"></script>
+</body>
+
+</html>
